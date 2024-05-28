@@ -8,6 +8,6 @@
 
 #### Tech stack:
 
-[![My Skills](https://skillicons.dev/icons?i=sentry,linux,bash,mongodb,aws,postgres,django,fastapi,nginx,rabbitmq,githubactions,mysql,redis,express,sequelize,react,redux,sass,vite,yarn,materialui,html,css,&perline=8)](https://skillicons.dev)#   D a u i t b a y _ s k i l l s 
- 
- 
+[![My Skills](https://skillicons.dev/icons?i=sentry,linux,bash,mongodb,aws,postgres,django,fastapi,nginx,rabbitmq,githubactions,mysql,redis,express,sequelize,react,redux,sass,vite,yarn,materialui,html,css,&perline=8)](https://skillicons.dev) 
+
+
