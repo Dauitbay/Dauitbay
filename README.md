@@ -1,6 +1,6 @@
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Dauitbay&layout=compact)](https://github.com/Dauitbay)  
 #### Programming Languages:  
-[![Programming Languages:](https://skillicons.dev/icons?i=py,js,ts)](https://skillicons.dev)
+[![Programming Languages:](https://skillicons.dev/icons?i=py,go,js,ts)](https://skillicons.dev)
 
 #### Desktop Environment:
 
