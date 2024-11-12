@@ -4,7 +4,7 @@
 
 #### Desktop Environment:
 
-[![Desktop Environment](https://skillicons.dev/icons?i=git,docker,postman,github,gitlab,pycharm&perline=8)](https://skillicons.dev)
+[![Desktop Environment](https://skillicons.dev/icons?i=git,docker,postman,github,gitlab,pycharm,go&perline=8)](https://skillicons.dev)
 
 #### Tech stack:
 
