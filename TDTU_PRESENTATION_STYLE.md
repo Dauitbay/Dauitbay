@@ -114,6 +114,12 @@ staff, aircraft, simulators · 12→12 aircraft · 13→13 simulators · 14,15,1
 Photos: extracted from the source deck into `…/scratchpad/assets` (lab01–lab32 from source slide 4,
 pl01–pl06 aircraft, sim01–sim03 simulators) and placed centre-cropped via `lib.pic`/`fit_crop`.
 
+**Generator bug fixed 2026-10-13 — do not reintroduce:** `<a:spcPct>` takes THOUSANDTHS of a
+percent (90% = `90000`). Writing `val="90"` makes PowerPoint collapse every line of a paragraph on
+top of the next, while LibreOffice silently clamps it — so the visual QA render looked fine and the
+real file was unreadable. `lib.para()` now multiplies the `line` argument by 1000. Any new OOXML
+percentage field (spcPct, spcPts aside) needs the same check.
+
 Generator: `…/scratchpad/gen/{lib.py,slides.py,build.py}` — `python3 gen/build.py` rebuilds the deck
 (copies assets into the package, writes rels, validates, zips).
 
