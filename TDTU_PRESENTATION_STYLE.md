@@ -94,32 +94,30 @@ python3 $S/scripts/office/soffice.py --headless --convert-to pdf out.pptx && pdf
 ```
 Then look at every rendered slide: overflow, overlap, leftover text from the copied slide.
 
-## Deck 2 — Aviation faculty (built 2026-10-13)
+## Deck 2 — Aviation faculty (rebuilt 2026-10-13)
 
-Data source: `_____13.10.2026_-compressed.pptx` (16 slides, Cyrillic Uzbek, Aviation Transport
-Engineering faculty). Output: `AVIACIYA_fakulteti_taqdimoti.pptx` — 14 slides, same TDTU style,
-language kept Cyrillic as in the data file.
+Data source: `_____13.10.2026_-compressed.pptx` (16 slides) plus the image-rich variant the user sent
+second. Output: `AVIACIYA_fakulteti_taqdimoti.pptx`.
 
-Generator (rerun to rebuild): `…/scratchpad/gen/lib.py` (shape helpers), `gen/slides.py` (content),
-`gen/build.py` (packaging + validate + zip). `python3 gen/build.py` rebuilds the deck end to end.
+**Two rules the user set, both binding on any future edit:**
+1. **Words are verbatim.** Every sentence, lab name, equipment line and price is copied
+   character-for-character from the source deck. Nothing is translated, shortened, re-ordered inside a
+   sentence, or invented. Slides that would need invented content (targets, monitoring) are not added.
+2. **Format = 16 slides, one per source slide, same order.** Nothing merged, nothing split. The TDTU
+   card styling of deck 1 is the skin; the source deck is the skeleton.
 
-Slide map: 1 title · 2 faculty & departments · 3 programmes & students · 4 achievements ·
-5 international partners · 6 lab-base total need · 7 Aviation Engineering labs ·
-8 Aircraft-building labs · 9 Air Navigation labs · 10 pilot training, foreign models ·
-11 infrastructure & staff · 12 aircraft & simulators · 13 development strategy (12 cards) ·
-14 target indicators & monitoring.
+Slide map (new → source): 1→1 title · 2→2 faculty · 3→3 yutuqlar · 4→4 lab base photo grids ·
+5→5 Aviation Engineering labs · 6→6 aviasozlik 5 labs · 7→7 radioelektron 2 labs ·
+8→8 computer design (космик) · 9→9 CubeSat · 10→10 pilot training + DUAL · 11→11 infrastructure,
+staff, aircraft, simulators · 12→12 aircraft · 13→13 simulators · 14,15,16→14,15,16 strategy.
 
-Key figures used (cross-checked against the source XML, not markitdown's scrambled order):
-36 PŬ (22+14) · 1775 students (1195 day + 465 external + 115 evening) · 1712 bachelor + 63 master ·
-scientific potential 42% (6 DSc, 9 PhD, 10 doctoral, 15 independent) · 6 partner universities ·
-9 partner organisations · lab equipment need $391 752 = 54 880 + 192 360 + 32 012 + 52 500 + 60 000
-(by kafedra: Aviation Engineering $247 240, Air Navigation $144 512) · pilot base $11.5m
-(aircraft $9.2m + simulators $2.3m) · 21 staff.
+Photos: extracted from the source deck into `…/scratchpad/assets` (lab01–lab32 from source slide 4,
+pl01–pl06 aircraft, sim01–sim03 simulators) and placed centre-cropped via `lib.pic`/`fit_crop`.
 
-**Known data conflict in the source:** the computer-design (space) lab is labelled $52 500 in the
-source but its own item prices sum to $66 500. The deck uses the source's stated $52 500.
+Generator: `…/scratchpad/gen/{lib.py,slides.py,build.py}` — `python3 gen/build.py` rebuilds the deck
+(copies assets into the package, writes rels, validates, zips).
 
 ## Status
 
 - [x] Source deck analysed, template extracted, spec written
-- [x] Aviation data deck built, validated and visually QA'd (14/14 slides)
+- [x] Aviation deck rebuilt verbatim, 16 slides matching the source one-for-one, photos included, validated and visually QA'd (16/16)
